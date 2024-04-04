@@ -1,4 +1,6 @@
 import * as React from 'react';
+import axios from 'axios';
+import {serverUrl} from '../../helpers/Contants'
 
 interface IFormContainerProps {}
 
@@ -8,9 +10,12 @@ const FormContainer: React.FunctionComponent<IFormContainerProps> = () => {
     const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try{
-            
+                await axios.post(`${serverUrl}/shorturl`, {
+                    full: fullUrl
+                });
+                setFullUrl("")
         } catch(error) {
-
+            console.log(error)
         }
     }
 
