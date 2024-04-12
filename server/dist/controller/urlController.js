@@ -49,7 +49,7 @@ const getUrl = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const shortUrl = yield shortUrlModel_1.urlModel.findOne({ shortUrl: req.params.id });
         if (!shortUrl) {
-            res.status(404).send({ message: "Url not found" });
+            res.status(404).send({ message: "Full Url not found" });
         }
         else {
             shortUrl.clicks++;
