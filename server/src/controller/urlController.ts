@@ -1,6 +1,6 @@
 import express from "express";
 import { urlModel } from "../model/shortUrlModel";
-import { escape } from "querystring";
+
 
 export const createUrl = async (
     req: express.Request, 
@@ -8,7 +8,7 @@ export const createUrl = async (
         try {
             console.log("the full url is: ", req.body.fullUrl);
             const {fullUrl} = req.body;
-            const urlFound = await urlModel.find({fullUrl})
+            const urlFound = await urlModel.find({fullUrl});
             if(urlFound.length > 0) {
                 res.status(409);
                 res.send(urlFound);
@@ -43,7 +43,7 @@ export const getUrl = async (
             const shortUrl = await
              urlModel.findOne({shortUrl: req.params.id});
              if(!shortUrl) {
-                res.status(404).send({message: "Url not found"});
+                res.status(404).send({message: "Full Url not found"});
              } else {
                 shortUrl.clicks++;
                 shortUrl.save();
