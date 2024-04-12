@@ -3,7 +3,7 @@ import FormContainer from '../formcontainer/FormContainer';
 import { UrlData } from '../../assets/UrlData';
 import { serverUrl } from '../../helpers/Contants';
 import axios from 'axios';
-import DataTable from './dataTable/DataTable';
+import DataTable from '../dataTable/DataTable';
 
 interface IContainerProps {}
 

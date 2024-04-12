@@ -10,7 +10,7 @@ const FormContainer: React.FunctionComponent<IFormContainerProps> = (props) => {
     const {updateReloadState} = props;
     const [fullUrl, setFullUrl] = React.useState<string>("");
 
-    const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {9
         e.preventDefault();
         try{
                 await axios.post(`${serverUrl}/shortUrl`, {

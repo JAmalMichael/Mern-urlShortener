@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { UrlData } from '../../../assets/UrlData';
+import { UrlData } from '../../assets/UrlData';
 import { Link } from 'react-router-dom';
-import { serverUrl } from '../../../helpers/Contants';
+import { serverUrl } from '../../helpers/Contants';
 import axios from 'axios';
 
 
